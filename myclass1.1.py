@@ -53,6 +53,7 @@ class VacationPackage:
         
         total_cost = self.base_cost
         total_cost += self.vacation_destination.get_extra_cost(self.destination)
+
         total_cost += self.vacation_duration.get_penalty_fee()
         total_cost -= self.vacation_duration.get_promotion()
 
@@ -62,7 +63,7 @@ class VacationPackage:
         return max(int(total_cost), 0)
 
 def main():
-    destination = "Paris"
+    destination = 'Paris'
     number_of_passengers = 5
     duration_in_days = 10
 
